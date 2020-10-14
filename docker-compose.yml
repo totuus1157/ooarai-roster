@@ -23,5 +23,5 @@ services:
     working_dir: /app
 
     # 起動後に実行するコマンドを指定
-    command: npm start
+    command: npm run dev
 
