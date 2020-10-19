@@ -8,18 +8,22 @@
     <h1><%= title %></h1>
     <article>
       <table>
+        <% const tableHead = ["id", "名前", "名前（かな）", "学年", "身長(cm)", "チーム", "担当", "リーダー", "ニックネーム"]; %>
+        <% tableHead.forEach((item) => { %>
+          <th><%= item %></th>
+        <% }); %>
         <% stus.forEach((stu) => { %>
-        <tr>
-          <td><%= stu.id %></td>
-          <td><%= stu.name %></td>
-          <td><%= stu.name_kana %></td>
-          <td><%= stu.year %></td>
-          <td><%= stu.height %></td>
-          <td><%= stu.team %></td>
-          <td><%= stu.role %></td>
-          <td><%= stu.leader %></td>
-          <td><%= stu.nickname %></td>
-        </tr>
+          <tr>
+            <td><%= stu.id %></td>
+            <td><%= stu.name %></td>
+            <td><%= stu.name_kana %></td>
+            <td><%= stu.year %></td>
+            <td><%= stu.height %></td>
+            <td><%= stu.team %></td>
+            <td><%= stu.role %></td>
+            <td><%= stu.leader %></td>
+            <td><%= stu.nickname %></td>
+          </tr>
         <% }); %>
       </table>
     </article>
