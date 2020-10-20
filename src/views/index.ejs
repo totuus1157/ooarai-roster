@@ -5,8 +5,10 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <article>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <main>
       <table>
         <% const tableHead = ["id", "名前", "名前（かな）", "学年", "身長(cm)", "チーム", "担当", "リーダー", "ニックネーム"]; %>
         <% tableHead.forEach((item) => { %>
@@ -26,6 +28,6 @@
           </tr>
         <% }); %>
       </table>
-    </article>
+    </main>
   </body>
 </html>

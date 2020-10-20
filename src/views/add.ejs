@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8"/>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <header>
+      <h1><%= title %></h1>
+    </header>
+    <main>
+      <form method="post" action="/index/add">
+        <label for="name">名前</label>
+        <input type="text" name="name" id="name" />
+        <label for="kana">名前（かな）</label>
+        <input type="text" name="nameKana" id="kana" />
+        <label for="year">学年</label>
+        <input type="number" name="year" id="year" />
+        <label for="height">身長（cm）</label>
+        <input type="number" name="height" id="height" />
+        <label for="team">チーム</label>
+        <input type="text" name="team" id="team" />
+        <label for="role">担当</label>
+        <input type="text" name="role" id="role" />
+        <label for="leader">リーダー</label>
+        <input type="checkbox" name="leader" id="leader" />
+        <label for="nickname">ニックネーム（あれば）</label>
+        <input type="text" name="nickname" id="nickname" />
+        <input type="submit" value="作成" />
+      </form>
+    </main>
+  </body>
+</html>
