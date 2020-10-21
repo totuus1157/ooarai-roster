@@ -9,11 +9,11 @@
       <h1><%= title %></h1>
     </header>
     <main>
-      <form method="post" action="/index/add">
+      <form method="post" action="/add">
         <label for="name">名前</label>
         <input type="text" name="name" id="name" />
         <label for="kana">名前（かな）</label>
-        <input type="text" name="nameKana" id="kana" />
+        <input type="text" name="name_kana" id="kana" />
         <label for="year">学年</label>
         <input type="number" name="year" id="year" />
         <label for="height">身長（cm）</label>
@@ -23,7 +23,7 @@
         <label for="role">担当</label>
         <input type="text" name="role" id="role" />
         <label for="leader">リーダー</label>
-        <input type="checkbox" name="leader" id="leader" />
+        <input type="checkbox" name="leader" id="leader" value=true />
         <label for="nickname">ニックネーム（あれば）</label>
         <input type="text" name="nickname" id="nickname" />
         <input type="submit" value="作成" />
