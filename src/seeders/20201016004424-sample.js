@@ -62,7 +62,43 @@ module.exports = {
         nickname: null,
         createdAt: new Date(),
         updatedAt: new Date()
-      }
+      },
+      {
+        name: '角谷　杏',
+        name_kana: 'かどたに　あんず',
+        year:3,
+        height:142,
+        team: 'カメさん',
+        role: '車長',
+        leader: true,
+        nickname: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: '小山　柚子',
+        name_kana: 'こやま　ゆず',
+        year:3,
+        height:157,
+        team: 'カメさん',
+        role: '操縦手',
+        leader: null,
+        nickname: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: '河嶋　桃',
+        name_kana: 'かわしま　もも',
+        year:3,
+        height:164,
+        team: 'カメさん',
+        role: '砲手',
+        leader: null,
+        nickname: null,
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
     ]);
   },
 
