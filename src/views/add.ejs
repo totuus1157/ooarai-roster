@@ -6,29 +6,45 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheet/style.css' />
   </head>
-  <body>
+  <body class="container">
     <header>
-      <h1><%= title %></h1>
+      <h1 class="display-4"><%= title %></h1>
     </header>
     <main>
       <form method="post" action="/add">
-        <label for="name">名前</label>
-        <input type="text" name="name" id="name" />
-        <label for="kana">名前（かな）</label>
-        <input type="text" name="name_kana" id="kana" />
-        <label for="year">学年</label>
-        <input type="number" name="year" id="year" />
-        <label for="height">身長（cm）</label>
-        <input type="number" name="height" id="height" />
-        <label for="team">チーム</label>
-        <input type="text" name="team" id="team" />
-        <label for="role">担当</label>
-        <input type="text" name="role" id="role" />
-        <label for="leader">リーダー</label>
-        <input type="checkbox" name="leader" id="leader" value=true />
-        <label for="nickname">ニックネーム（あれば）</label>
-        <input type="text" name="nickname" id="nickname" />
-        <input type="submit" value="作成" />
+        <div class="form-group">
+          <label for="name">名前</label>
+          <input class="form-control" type="text" name="name" id="name" />
+        </div>
+        <div class="form-group">
+          <label for="kana">名前（かな）</label>
+          <input class="form-control" type="text" name="name_kana" id="kana" />
+        </div>
+        <div class="form-group">
+          <label for="year">学年</label>
+          <input class="form-control" type="number" name="year" id="year" />
+        </div>
+        <div class="form-group">
+          <label for="height">身長（cm）</label>
+          <input class="form-control" type="number" name="height" id="height" />
+        </div>
+        <div class="form-group">
+          <label for="team">チーム</label>
+          <input class="form-control" type="text" name="team" id="team" />
+        </div>
+        <div class="form-group">
+          <label for="role">担当</label>
+          <input class="form-control" type="text" name="role" id="role" />
+        </div>
+        <div class="form-group">
+          <label for="leader">リーダー</label>
+          <input class="form-control" type="checkbox" name="leader" id="leader" value=true />
+        </div>
+        <div class="form-group">
+          <label for="nickname">ニックネーム（あれば）</label>
+          <input class="form-control" type="text" name="nickname" id="nickname" />
+        </div>
+        <input class="btn btn-primary" type="submit" value="作成" />
       </form>
     </main>
   </body>
