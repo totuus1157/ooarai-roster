@@ -8,14 +8,16 @@
   </head>
   <body>
     <header>
-      <h1><%= title %></h1>
+      <h1 class="display-4"><%= title %></h1>
     </header>
     <main>
-      <table>
-        <% const tableHead = ["id", "名前", "名前（かな）", "学年", "身長(cm)", "チーム", "担当", "リーダー", "ニックネーム"]; %>
-        <% tableHead.forEach((item) => { %>
-          <th><%= item %></th>
-        <% }); %>
+      <table class="table">
+        <thead class="thead-light">
+          <% const tableHead = ["id", "名前", "名前（かな）", "学年", "身長(cm)", "チーム", "担当", "リーダー", "ニックネーム"]; %>
+          <% tableHead.forEach((item) => { %>
+            <th><%= item %></th>
+          <% }); %>
+        </thead>
         <% content.forEach((stu) => { %>
           <tr>
             <td><%= stu.id %></td>
