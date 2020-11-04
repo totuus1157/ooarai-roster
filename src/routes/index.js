@@ -35,5 +35,35 @@ router.post('/add', (req, res, next) => {
     });
 });
 
+router.get('/edit', (req, res, next) => {
+  db.Student.findByPk(req.query.id).then(stus => {
+    const data = {
+      title: '更新',
+      form: stus
+    }
+    res.render('edit', data);
+  });
+});
+
+router.post('/edit', (req, res, next) => {
+  db.sequelize.sync()
+    .then(() => db.Student.update({
+      name: req.body.name,
+      name_kana: req.body.name_kana,
+      year: req.body.year,
+      height: req.body.height,
+      team: req.body.team,
+      role: req.body.role,
+      leader: req.body.leader,
+      nickname: req.body.nickname
+    },
+    {
+      where:{id:req.body.id}
+    }))
+    .then(stus => {
+      res.redirect('/');
+    });
+});
+
 
 module.exports = router;
