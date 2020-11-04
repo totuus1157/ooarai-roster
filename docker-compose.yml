@@ -19,7 +19,7 @@ services:
 
   app:
     # 起動するイメージを指定（ここではNode.js v12の公式イメージ）
-    image: node:12.19
+    image: node:12.19.0-stretch
 
     # 環境変数の追加（MySQLの接続情報）
     env_file: ./app.env
