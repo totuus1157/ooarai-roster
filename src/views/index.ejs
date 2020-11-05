@@ -23,11 +23,11 @@
             <td><%= stu.id %></td>
             <td><%= stu.name %></td>
             <td><%= stu.name_kana %></td>
-            <td><%= stu.year %></td>
-            <td><%= stu.height %></td>
+            <td class="text-center"><%= stu.year %></td>
+            <td class="text-center"><%= stu.height %></td>
             <td><%= stu.team %></td>
             <td><%= stu.role %></td>
-            <td><%= stu.leader ? "○" : "" %></td>
+            <td class="text-center"><%= stu.leader ? "○" : "" %></td>
             <td><%= stu.nickname %></td>
           </tr>
         <% }); %>
