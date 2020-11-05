@@ -65,5 +65,24 @@ router.post('/edit', (req, res, next) => {
     });
 });
 
+router.get('/delete', (req, res, next) => {
+  db.Student.findByPk(req.query.id).then(stus => {
+    const data = {
+      title: '削除',
+      form: stus
+    }
+    res.render('delete', data);
+  });
+});
+
+router.post('/delete', (req, res, next) => {
+  db.sequelize.sync()
+      .then(() => db.Student.destroy({
+        where:{id:req.body.id}
+      }))
+      .then(stus => {
+        res.redirect('/');
+      });
+});
 
 module.exports = router;
