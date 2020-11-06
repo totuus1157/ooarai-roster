@@ -29,6 +29,12 @@
             <td><%= stu.role %></td>
             <td class="text-center"><%= stu.leader ? "○" : "" %></td>
             <td><%= stu.nickname %></td>
+            <td class="border border-0">
+              <a class="btn btn-secondary btn-sm" href="/edit?id=<%= stu.id %>">更新</a>
+            </td>
+            <td class="border border-0">
+              <a class="btn btn-danger btn-sm" href="/delete?id=<%= stu.id %>">削除</a>
+            </td>
           </tr>
         <% }); %>
       </table>
