@@ -68,14 +68,7 @@ module.exports = (sequelize, DataTypes) => {
       }
     },
     leader: DataTypes.BOOLEAN,
-    nickname: {
-      type: DataTypes.STRING,
-      validate: {
-        isNull: {
-          msg: "必要であれば入力してください。"
-        }
-      }
-    }
+    nickname: DataTypes.STRING
   }, {});
   Student.associate = function(models) {
     // associations can be defined here
