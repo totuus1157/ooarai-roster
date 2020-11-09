@@ -14,25 +14,36 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/add', (req, res, next) => {
-  const data = { title: '新規追加' }
+  const data = {
+    title: '新規追加',
+    form: new db.Student(),
+    err:null
+  }
   res.render('add', data);
 });
 
 router.post('/add', (req, res, next) => {
-  db.sequelize.sync()
-    .then(() => db.Student.create({
-      name: req.body.name,
-      name_kana: req.body.name_kana,
-      year: req.body.year,
-      height: req.body.height,
-      team: req.body.team,
-      role: req.body.role,
-      leader: req.body.leader,
-      nickname: req.body.nickname
-    }))
-    .then(stus => {
-      res.redirect('/');
-    });
+  const form = {
+    name: req.body.name,
+    name_kana: req.body.name_kana,
+    year: req.body.year,
+    height: req.body.height,
+    team: req.body.team,
+    role: req.body.role,
+    leader: req.body.leader,
+    nickname: req.body.nickname
+  };
+  db.sequelize.sync().then(() => db.Student.create(form).then(stus => {
+    res.redirect('/');
+  }).catch(err => {
+    const data = {
+      title: '新規追加',
+      form: form,
+      err: err
+    }
+    res.render('add', data);
+  })
+  )
 });
 
 router.get('/edit', (req, res, next) => {

@@ -1,14 +1,54 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Student = sequelize.define('Student', {
-    name: DataTypes.STRING,
-    name_kana: DataTypes.STRING,
-    year: DataTypes.INTEGER,
-    height: DataTypes.INTEGER,
-    team: DataTypes.STRING,
-    role: DataTypes.STRING,
+    name: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    name_kana: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    year: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: true,
+        isInt: true,
+        max: 3,
+        min: 1
+      }
+    },
+    height: {
+      type: DataTypes.INTEGER,
+      validate: {
+        notEmpty: true,
+        isInt: true,
+        min: 0
+      }
+    },
+    team: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
+    role: {
+      type: DataTypes.STRING,
+      validate: {
+        notEmpty: true
+      }
+    },
     leader: DataTypes.BOOLEAN,
-    nickname: DataTypes.STRING
+    nickname: {
+      type: DataTypes.STRING,
+      validate: {
+        isNull: true
+      }
+    }
   }, {});
   Student.associate = function(models) {
     // associations can be defined here

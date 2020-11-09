@@ -11,27 +11,52 @@
       <h1 class="display-4"><%= title %></h1>
     </header>
     <main>
+      <ol class="text-danger">
+      <% if (err != null) { for (let i in err.errors) { %>
+        <li><%= err.errors[i].message %></li>
+        <% }} %>
+      </ol>
       <form method="post" action="/add">
         <div class="form-group">
           <label for="name">名前</label>
-          <input class="form-control" type="text" name="name" id="name" />
+          <input class="form-control" type="text" name="name" id="name" value="<%= form.name %>" />
+          <ul class="text-danger">
+            <% if (err != null) { for (let i in err.get("name")) { %>
+            <li><%= err.get("name")[i].message %></li>
+          <% }} %>
         </div>
         <div class="form-group">
           <label for="kana">名前（かな）</label>
-          <input class="form-control" type="text" name="name_kana" id="kana" />
+          <input class="form-control" type="text" name="name_kana" id="kana" value="<%= form.name_kana %>" />
+          <ul class="text-danger">
+            <% if (err != null) { for (let i in err.get("name_kana")) { %>
+            <li><%= err.get("name_kana")[i].message %></li>
+          <% }} %>
         </div>
         <div class="form-group">
           <label for="year">学年</label>
-          <input class="form-control" type="number" name="year" id="year" />
+          <input class="form-control" type="number" name="year" id="year" value="<%= form.year %>" />
+          <ul class="text-danger">
+            <% if (err != null) { for (let i in err.get("year")) { %>
+            <li><%= err.get("year")[i].message %></li>
+          <% }} %>
         </div>
         <div class="form-group">
           <label for="height">身長（cm）</label>
-          <input class="form-control" type="number" name="height" id="height" />
+          <input class="form-control" type="number" name="height" id="height" value="<%= form.height %>" />
+          <ul class="text-danger">
+            <% if (err != null) { for (let i in err.get("height")) { %>
+            <li><%= err.get("height")[i].message %></li>
+          <% }} %>
         </div>
         <div class="input-group" />
           <div class="form-group">
             <label for="team">チーム</label>
-            <input class="form-control" type="text" name="team" id="team" />
+            <input class="form-control" type="text" name="team" id="team" value="<%= form.team %>" />
+            <ul class="text-danger">
+              <% if (err != null) { for (let i in err.get("team")) { %>
+              <li><%= err.get("team")[i].message %></li>
+            <% }} %>
           </div>
           <div class="checkbox">
             <input class="form-check-input" type="checkbox" name="leader" id="leader" value=true />
@@ -40,11 +65,19 @@
         </div>
         <div class="form-group">
           <label for="role">担当</label>
-          <input class="form-control" type="text" name="role" id="role" />
+          <input class="form-control" type="text" name="role" id="role" value="<%= form.role %>" />
+          <ul class="text-danger">
+            <% if (err != null) { for (let i in err.get("role")) { %>
+            <li><%= err.get("role")[i].message %></li>
+          <% }} %>
         </div>
         <div class="form-group">
           <label for="nickname">ニックネーム（あれば）</label>
-          <input class="form-control" type="text" name="nickname" id="nickname" />
+          <input class="form-control" type="text" name="nickname" id="nickname" value="<%= form.nickname %>" />
+          <ul class="text-danger">
+            <% if (err != null) { for (let i in err.get("nickname")) { %>
+            <li><%= err.get("nickname")[i].message %></li>
+          <% }} %>
         </div>
         <input class="btn btn-primary" type="submit" value="作成" />
       </form>
