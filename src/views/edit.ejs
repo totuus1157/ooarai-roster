@@ -35,7 +35,9 @@
             <input class="form-control" type="text" name="team" id="team" value="<%= form.team %>" />
           </div>
           <div class="checkbox">
-            <input class="form-check-input" type="checkbox" name="leader" id="leader" value=true />
+            <input class="form-check-input" type="checkbox" name="leader" id="leader"
+              <%= (form.leader != null) ? "checked" : "" %>
+            />
             <label class="form-check-label" for="leader">リーダー</label>
           </div>
         </div>
