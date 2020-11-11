@@ -65,7 +65,7 @@
           </div>
           <div class="checkbox">
             <input class="form-check-input" type="checkbox" name="leader" id="leader" value=true
-              <%= (form.leader != null) ? "checked" : "" %>
+              <%= (form.leader != 0 || form.leader != null) ? "checked" : "" %>
             />
             <label class="form-check-label" for="leader">リーダー</label>
           </div>
